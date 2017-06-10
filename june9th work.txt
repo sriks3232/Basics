@@ -1,0 +1,164 @@
+
+JDK => Java Development Kit => JDK Tools + JRE
+
+JRE => Java Runtime Environment => used to run a Java application on client machines
+
+Developing a Java Application at command prompt
+-----------------------------------------------
+- Open Command prompt by typing cmd in start->run
+	c:\>e:
+	e:\>
+
+- Create a folder "JavaPrograms" as follows
+	e:\>md JavaPrograms
+		md means make directory
+
+- Change the folder to "JavaPrograms" as follows
+	e:\>cd JavaPrograms
+	e:\JavaPrograms>
+		cd means change directory
+
+- Set the path to JAVA_HOME\bin folder as follows
+	e:\JavaPrograms>set path=C:\Program Files\Java\jdk1.8.0_111\bin;%path%;
+
+		%path% means appending previous path settings
+
+- Create a Java source code as follows
+	e:\JavaPrograms>notepad Welcome.java
+
+- Type the following code in Welcome.java
+   //to display Welcome message onto the screen
+   class Welcome
+   {
+      public static void main(String[] args)
+      {
+	System.out.println("Welcome");
+      }
+   }
+	
+	Note : save the file (ctrl+s)
+
+- Compile Welcome.java as follows
+	e:\JavaPrograms>javac Welcome.java
+
+	which creates Welcome.class called as byte code
+
+- Run the byte code Welcome.class as follows
+	e:\JavaPrograms>java Welcome
+
+	which displays "Welcome" message onto the screen
+
+Setting path permanently
+------------------------
+Right click on Computer=>Properties->Click on Advanced System Settings->
+Click on Environment Variables->Click on New
+
+	Variable Name : path
+	Variable Value: C:\Program Files\Java\jdk1.8.0_111\bin
+
+	Click Ok
+
+Explanation of First Java Program
+---------------------------------
+Line 1: //to display Welcome message onto the screen
+Line 2: class Welcome
+Line 3: {
+Line 4:    public static void main(String[] args)
+Line 5:    {
+Line 6:		System.out.println("Welcome");
+Line 7:    }
+Line 8: }
+
+Line 1: It is a comment line which is used to document a program which is ignored
+	by compiler
+
+	Types of Comments
+	-----------------
+	// => single line comment
+	/* ... */ => multiline comment
+
+Line 2: It is a class. A Java program is a collection of classes
+
+Line 3&8 : open and close braces of class Welcome
+
+Line 4: public static void main(String[] args)
+----------------------------------------------
+JVM
+---
+- JVM stands for Java Virtual Machine
+- JVM acts as an interface between Java Byte code and Operating System
+- When a Java program is executed, JVM looks for main() in the class
+- main() is the entry point to run Java programs
+
+public
+------
+- public is an access modifier
+- public members are accessible everywhere
+- Since JVM is outside the class/folder, to access main() by JVM, main() should eb public
+
+static
+------
+static members are accessible directly with the classname without creating objects
+
+	>java Welcome.main()
+
+void
+-----
+- void means no return type
+- main() does not return anything back to JVM
+
+String[] args
+-------------
+- String is a predefined class
+- It is used to store command line arguments
+
+	>java Welcome x y z
+
+	x,y and z are command line arguments
+		
+		args[0] = x, args[1] = y, args[2] = z
+
+Line 5&7 : Open and close braces of main()
+
+Line 6: System.out.println()
+----------------------------
+It is used to display messages or the value of variables or both onto the screen
+
+
+System : It is a predefined class
+
+out : out is a data member of System class and it is an object of PrintStream class
+ 	and it is static
+
+println() : It is a method of PrintStream class
+
+
+	class System
+	{
+	   static PrintStream out;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
